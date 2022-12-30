@@ -1,0 +1,55 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+    <div class="container" style="padding-top: 70px;">
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Hình ảnh</th>
+          <th>item</th>
+          <th>weapon</th>
+          <th>Thông tin, Xóa</th>
+
+        </thead>
+        <tbody>
+            <%
+            
+            for (var i=0; i < data1.length;i++){%>
+                
+                <tr>
+                    <td><%=data1[i].name%></td>
+                    <td><img src="data:image/png;base64,<%=data1[i].image_nhanvat%>" alt="Embedded Image"  width="200 rem"></td>
+                    
+                    <% for(var t = 0; t < items.length; t++){ 
+                      if (items[t].id == data1[i].id_items){ %>
+                      <td><img src="data:image/png;base64,<%=items[t].itemimage%>" alt="Embedded Image"  width="70px"></td>
+                      <%}
+                      }%>
+
+
+                    
+                    <% for(var r = 0; r < weapons.length; r++){
+                      if (weapons[r].id_weapons == data1[i].id_weapons){ %>
+                        <td><img src="data:image/png;base64,<%=weapons[r].weaponimage%>" alt="Embedded Image"  width="200 rem"></td>
+                        <%}
+                        }%>
+
+                    
+                    
+                    <td>
+                      <a href="/duyet/<%=data1[i].id_nhanvat %>" class="btn btn-info">Kiểm tra</a>
+                      <a href="/deletenhanvat2/<%=data1[i].id_nhanvat %>" class="btn btn-danger">Xóa</a>
+                    </td>
+                  </tr>
+                  
+                <%
+                }
+            %>
+
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<%- include('footer.ejs'); -%>
+
+

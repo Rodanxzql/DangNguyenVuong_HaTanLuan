@@ -1,0 +1,55 @@
+
+
+      <div class="modal" tabindex="-1" id="action_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" id="sample_form" enctype="multipart/form-data">
+                    <div class="modal-header" id="dynamic_modal_title" >
+                        <h5 class="modal-title">Thêm cách xây dựng nhân vật</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" name="name" id="name" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trang bị</label>
+                            <select class="form-control" id="exampleFormControlSelect1"
+                                    class="form-select"
+                                    aria-label="Default select example"
+                                    name="id_items">
+                                    <% for(var count = 0 ;count < items.length;count++) { %>
+                                    <option value="<%= items[count].id %>">
+                                        <%= items[count].name %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                                <label class="form-label">Vũ khí</label>
+                                <select class="form-control" id="exampleFormControlSelect1"
+                                    class="form-select"
+                                    aria-label="Default select example"
+                                    name="id_weapons">
+                                    <% for(var count = 0 ;count < weapons.length;count++) { %>
+                                    <option value="<%= weapons[count].id_weapons %>">
+                                        <%= weapons[count].name %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlFile1">thêm hình</label><br>
+                            <input type="file" name="nhanvatimage" accept="image/*">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" id="id" />
+                        <input type="hidden" name="action" id="action" value="Add" />
+                        <button type="submit" class="btn btn-primary" id="action_button">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+

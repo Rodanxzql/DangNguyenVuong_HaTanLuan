@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FCE77D;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222222;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    
+}
+/* hide scrollbar nhưng vẫn cho phép scrollinh */
+body {
+    -ms-overflow-style: none; /* cho  Internet Explorer, Edge */
+    scrollbar-width: none; /* cho Firefox */
+    overflow-y: scroll; 
+  }
+  .row{
+    margin: 5px;
+ 
+  }
+body::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
+  }
+  
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    border-radius: 3px;
+    padding: 50px;
+
+}
+
+
+.container h1 {
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+.container2 {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 3px;
+}
+.container2 h1 {
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+.container2 h2 {
+    margin: 0 0 40px 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input,
+button {
+    font-family: "Ubuntu", sans-serif;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px;
+}
+
+.input:hover {
+    border-color: #999999;
+}
+
+.input:focus {
+    border-color: #0d6efd;
+}
+
+[type="submit"] {
+    background: #0d6efd;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 3px;
+    padding: 12px 0;
+    cursor: pointer;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-top: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+[type="submit"]:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+label {
+    font-weight: bold;
+}
+
+.link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.link a {
+    color: #0d6efd;
+}
+
+.success-msg,
+.err-msg {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.success-msg {
+    color: #ffffff;
+    background-color: #20c997;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile .img {
+    font-size: 50px;
+}
+
+.profile h2 {
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+
+.profile span {
+    display: block;
+    margin-bottom: 20px;
+    color: #999999;
+}
+
+.profile a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 3px;
+}
+
+.profile a:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: #dc3545;
+    color: #ffffff;
+}
+/*nav*/
+#wrap-content{
+    right: 0;
+    left: 0;
+}
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover{
+
+    color: rgb(196, 189, 189);
+}
+#navbarNavDropdown{
+    justify-content: end;
+    padding-right: 30px;
+}
+
+
+/*table*/
+.error {
+    color: rgb(219, 39, 93);
+    font-weight: 700;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .form-control.error {
+    border-color: rgb(219, 39, 93);
+    padding: .375rem .75rem;
+  }
+ 
+
+/* vukhi */
+
+
+  .flip-card {
+    width: 300px;
+    height: 405px;
+    perspective: 405px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color:#81ebdb;
+    color: #ebffff;
+  }
+  
+  .flip-card-back {
+    background-color: #eeffee;
+    color: #3a3a3e;
+    transform: rotateY(180deg);
+    height: 405px;
+    font-family: 'Dosis';
+    font-size: 20px;
+  }
+
+  textarea::-webkit-scrollbar {
+    display: none; /* cho Chrome, Safari, and Opera */
+  }
+
+  /* trang bi */
+  .trangbi .column {
+    float: left;
+    width: 30%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .trangbi .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .trangbi .container {
+    padding: 0 16px;
+  }
+

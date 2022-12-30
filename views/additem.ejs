@@ -1,0 +1,46 @@
+<div class="modal" tabindex="-1" id="action_modal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <form method="post" id="sample_form" enctype="multipart/form-data">
+              <div class="modal-header" id="dynamic_modal_title" >
+                  <h5 class="modal-title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="mb-3">
+                      <label class="form-label">Name</label>
+                      <input type="text" name="name" id="name" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Description</label>
+                      <input type="text" name="description" id="description" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Tấn công</label>
+                    <input type="text" name="atk_item" id="atk_item" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Máu</label>
+                    <input type="text" name="hp_item" id="hp_item" class="form-control" />
+                </div>
+                  <div class="mb-3">
+                      <label class="form-label">Level</label>
+                      <select name="weapon_level" id="weapon_level" class="form-control">
+                          <option value="5">5</option>
+                          <option value="4">4</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Hình</label>
+                    <input type="file" name="itemimage" id="itemimage" class="form-control" accept="image/*" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <input type="hidden" name="id" id="id" />
+                  <input type="hidden" name="action" id="action" value="Add" />
+                  <button type="submit" class="btn btn-primary" id="action_button">Thêm</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

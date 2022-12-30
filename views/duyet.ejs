@@ -1,0 +1,73 @@
+<%- include('header.ejs'); -%>
+<div class="modal" tabindex="-1" id="action_modal"></div>
+  <div class="modal-dialog">
+      <div class="modal-content">
+       
+                <form method="post" id="sample_form">
+                    <div class="modal-header" id="dynamic_modal_title" >
+                        <h5 class="modal-title">Duyệt</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div  class="modal-body">
+                        <%for(var i = 0; i < nhanvat.length; i++){%>
+                        <div class="form-control">
+                            <label for="exampleFormControlInput1" >Name: </label>
+                            <input  type="hidden" name="name" id="name" value="<%=nhanvat[i].name%>" class="form-control" />
+                            <label><%=nhanvat[i].name%></label>
+                        </div>
+                        <div class="form-control">
+                            <label for="exampleFormControlInput1" >Hình: </label>
+                            <input  type="hidden" name="image" id="image" value="<%=nhanvat[i].image_nhanvat%>" class="form-control" />   
+                        </div>
+                        <img src="data:image/png;base64,<%=nhanvat[i].image_nhanvat%>" alt="Embedded Image"  width="200 rem">
+                        
+                        
+                        <% for(var count = 0 ;count < items.length;count++) { 
+                            if (items[count].id == nhanvat[i].id_items){ %>
+                        <div class="form-control">
+                            <label for="exampleFormControlInput1" >Trang bị: </label>
+                            <input  type="hidden" name="id_items" id="id_items" value="<%=items[count].id%>" class="form-control" />
+                            <label><%=items[count].name%></label>
+                            
+                        </div>
+                        <img src="data:image/png;base64,<%=items[count].itemimage%>" alt="Embedded Image"  width="70px">
+                        <% } 
+                         } %>
+
+
+                        <% for(var count = 0 ;count < weapons.length;count++) { 
+                            if (weapons[count].id_weapons == nhanvat[i].id_weapons){ %>
+                        <div class="form-control">
+                            <label for="exampleFormControlInput1">Vũ khí: </label>
+                            <input  type="hidden" name="id_weapons" id="id_weapons" value="<%=weapons[count].id_weapons%>" class="form-control" />
+                            <label><%=weapons[count].name%></label>
+                        </div>
+                        <img src="data:image/png;base64,<%=weapons[i].weaponimage%>" alt="Embedded Image"  width="200 rem">
+                        <% } 
+                         } %>
+                        
+                        <% } %>
+
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="id" id="id" />
+                            <input type="hidden" name="action" id="action" value="Add" />
+                            
+                            <button type="submit" class="btn btn-primary" id="action_button">Duyệt</button>
+                            <button type="button" class="btn btn-secondary" onclick="history.back()">Hủy</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </div>
+      </div>
+
+</body>
+
+
+</html>
+
+

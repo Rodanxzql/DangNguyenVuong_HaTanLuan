@@ -1,0 +1,35 @@
+<%- include('header'); -%>
+
+      <div class="container-fluid p-5 text-white text-center">
+        <h1 style=" color: #F96167; font-family: 'Trocchi', serif; font-size: 75px; font-weight: normal; line-height: 60px;">Trang bị</h1>
+          <h2 style="color: #F96167; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">Tất cả trang bị đều là lv20</h2>
+        <div style="padding-top: 70px;">
+        <div class="row">
+          <%
+          for (var i=0; i<data.length;i++){%> 
+              
+            <div class="flip-card">
+              <div class="flip-card-inner" >
+                <div class="flip-card-front" style="background-color: #DDDDDD;color:#AAAAAA">
+                  <img src="data:image/png;base64,<%=data[i].itemimage%>" alt="Embedded Image" width="70 rem">
+                  <h1><%=data[i].name%></h1>
+                </div>
+                <div class="flip-card-back">
+                  <h1><%=data[i].name%></h1> 
+                  <textarea cols="30" rows="8"><%=data[i].description%></textarea> 
+                </div>
+              </div>
+            </div>
+              <%
+              }
+          %>
+  
+        </div>
+             
+  
+                  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

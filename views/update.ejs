@@ -1,0 +1,54 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+<style>
+    Body {  
+        font-family: Calibri, Helvetica, sans-serif;  
+        background-color: pink;  
+      }  
+      .button {   
+             background-color: #8e998e;   
+             width: 100%;  
+              color: rgb(54, 54, 52);   
+              padding: 15px;   
+              margin: 10px 0px;   
+              border: none;   
+              cursor: pointer; 
+              font-size: 25px;
+              font-weight: bolder; 
+               }  
+        button:hover {   
+            opacity: 0.5; 
+            }  
+ 
+       input[type=text], input[type=email],input[type=tel] {   
+              width: 100%;   
+              margin: 8px 0;  
+              padding: 12px 20px;   
+              display: inline-block;   
+              border: 2px solid green;   
+              box-sizing: border-box;   
+          }  
+       button:hover {   
+              opacity: 0.7;   
+          }   
+  
+</style>
+<div class="container">
+    <div class="profile">
+        
+</form>
+<center> <h1> Sửa thông tin </h1> </center>
+            <form action="" method="POST">
+                <input type="hidden" name="_id" value="<%= user.id %>">
+                <label>Username : </label>
+                <input type="text" class="input" name="_name" autocomplete="off" id="user_name" value="<%= user.name %>">
+                <label>Email : </label>
+                <input type="email" class="input" name="_email" autocomplete="off" id="user_email" value="<%= user.email %>">
+                <label>Phone number : </label>
+                <input type="tel" class="input" name="_phone" autocomplete="off" id="user_phone" value="<%= user.phonenumber %>">
+                <input class="button" type="submit" value="update">
+            </form>
+        
+    </div>
+</div>
+<%- include('footer.ejs'); -%>

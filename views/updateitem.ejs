@@ -1,0 +1,53 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+    <div class="container" style="padding-top: 70px;">
+      <button type="button" id="add_data" class="btn btn-success btn-sm float-end">Thêm trang bị</button>
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Level</th>
+          <th>Xóa, sửa</th>
+
+        </thead>
+        <tbody>
+            <%
+            for (var i=0; i<data.length;i++){%>
+                <tr>
+                    <td><%=data[i].name%></td>
+                    <td><img src="data:image/png;base64,<%=data[i].itemimage%>" alt="Embedded Image"  width="70px"></td>
+                    <td><%=data[i].description%></td>
+                    <td><%=data[i].weapon_level%></td>
+                    <td>
+                      <a href="/edititem/<%=data[i].id%>" class="btn btn-primary">Sửa</a>
+                      <a href="/delete/<%=data[i].id%>" class="btn btn-danger">Xóa</a>
+                    </td>
+                  </tr>
+                  
+                <%
+                }
+            %>
+
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<%- include('footer.ejs'); -%>
+<%- include('additem'); -%>
+
+<script>
+$('#add_data').click(function(){
+
+
+    $('#sample_form')[0].reset();
+
+    $('#action_button').text('Thêm');
+
+    $('#action_modal').modal('show');
+
+});
+
+</script>

@@ -1,0 +1,24 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+    <div class="container mt-3">
+     <h3 class="text-center">Cập nhật vũ khí</h3>
+     <% for(var i=0; i < data.length; i++){ %>
+      <img src="data:image/png;base64,<%=data[i].weaponimage%>" alt="Embedded Image"  width="200 rem">
+     <form action="" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id_weapons" value="<%=data[i].id_weapons%>">
+         <label for="name">Tên</label>
+         <input type="text" name="name" value="<%=data[i].name%>" class="form-control">
+         <label  for="description">Description</label>
+         <input type="text" name="description" value="<%=data[i].description%>" class="form-control">
+         <label class="form-label">Tấn công</label>
+         <input type="text" name="atk_weapon" id="atk_weapon" value="<%=data[i].atk_weapon%>" class="form-control" />
+         <label class="form-label">Máu</label>
+         <input type="text" name="hp_weapon" id="hp_weapon" value="<%=data[i].hp_weapon%>" class="form-control" />
+         <label class="form-label">Hình</label>
+         <input type="file" name="weaponimage" id="weaponimage" class="form-control" accept="image/*" />
+         <input type="submit" value="Cập nhật" class="btn btn-primary mt-2"> <br>
+         <a href="/updateweapon">Quay lại?</a>
+     </form>
+     <% } %>
+    </div>
+<%- include('footer.ejs'); -%>

@@ -1,0 +1,71 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+<div class="container" style="padding-top: 70px;">
+      <div class="container-fluid">
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h2 class="m-0 font-weight-bold text-primary text-center">Quản lý Nhân vật </h2>
+          </div>
+        
+          <div class="card-body">
+        
+            <div class="table-responsive">
+        
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Tên Nhân Vật</th>
+                    <th>Hình Ảnh</th>
+                    <th>Trang bị</th>
+                    <th>Vũ khí</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%
+          
+                    for (var i=0; i<data1.length;i++){%>
+                        
+                        <tr>
+                            <td><%=data1[i].name%></td>
+                            <td><img src="data:image/png;base64,<%=data1[i].image_nhanvat%>" alt="Embedded Image"  width="200 rem"></td>
+                            <% for(var t = 0; t < items.length; t++){ 
+                              if (items[t].id == data1[i].id_items){ %>
+                              <td><img src="data:image/png;base64,<%=items[t].itemimage%>" alt="Embedded Image"  width="70px"></td>
+                              <%}
+                              }%>
+        
+        
+        
+                            <% for(var r = 0; r < weapons.length; r++){
+                              if (weapons[r].id_weapons == data1[i].id_weapons){ %>
+                                <td><img src="data:image/png;base64,<%=weapons[r].weaponimage%>" alt="Embedded Image"  width="200 rem"></td>
+                                <%}
+                                }%>
+                            
+                            
+                            <td>
+                              <a href="/infonhanvatadmin/<%=data1[i].id_nhanvat %>" class="btn btn-info">Thông tin</a>
+                              <a href="/editnhanvat/<%=data1[i].id_nhanvat %>" class="btn btn-primary">Sửa</a>
+                              <a href="/deletenhanvat/<%=data1[i].id_nhanvat %>" class="btn btn-danger">Xóa</a>
+                            </td>
+                          </tr>
+                          
+                        <%
+                        }
+                    %>
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+        </div>
+        </div>
+
+  
+        <%- include('footer.ejs'); -%>
+
+       
+

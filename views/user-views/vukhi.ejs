@@ -1,0 +1,37 @@
+<%- include('header'); -%>
+
+      <div class="container-fluid p-5 text-white text-center">
+        <h1 style=" color: #F96167; font-family: 'Trocchi', serif; font-size: 75px; font-weight: normal; line-height: 48px;">Vũ khí</h1>
+          <h2 style="color: #F96167; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">Tất cả vũ khí đều là lv90 + R5</h2>
+        <div style="padding-top: 70px;">
+        <div class="row">
+          <%
+          for (var i=0; i<data.length;i++){%> 
+              
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="data:image/png;base64,<%=data[i].weaponimage%>" alt="Embedded Image" width="200 rem">
+                  <h1><%=data[i].name%></h1>
+                </div>
+                <div class="flip-card-back">
+                  <h1><%=data[i].name%></h1> 
+                  <p>Attack: <%=data[i].atk_weapon%> Hp: <%=data[i].hp_weapon%></p>
+                  <textarea cols="30" rows="8"><%=data[i].description%></textarea> 
+                </div>
+              </div>
+            </div>
+              <%
+              }
+          %>
+  
+        </div>
+             
+  
+                  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

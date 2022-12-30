@@ -1,0 +1,119 @@
+<%- include('header.ejs'); -%>
+<%- include('nav.ejs'); -%>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="raZhbETq"></script>
+    <div class="container" >
+        <table class="table" border="1" cellpadding="2" cellspacing="2">
+    <tbody>
+        <tr>
+            <% for(var count = 0; count < nhanvat.length;count++){ %> 
+            <a style="background-color:blue" class="btn btn-primary" href="/editnhanvat/<%=nhanvat[count].id_nhanvat %>">Sửa</a>
+            <td><h2>Nhân vật</h2></td>
+            <td><h2><%= nhanvat[count].name%></h2></td>
+            <td><img src="data:image/png;base64,<%=nhanvat[count].image_nhanvat%>" alt="Embedded Image"  width="200 rem"></td>
+            <input type="hidden" name="items" id="items" value="<%=nhanvat[count].id_items%>">
+            <% var item = nhanvat[count].id_items; %>
+            <% for(var i = 0; i < items.length; i++){ 
+                if (items[i].id == item){ 
+                    var itemhp=items[i].hp_item
+                    var itematk=items[i].atk_item}}%>       
+            <input type="hidden" name="weapons" id="weapons" value="<%=nhanvat[count].id_weapons%>"> 
+            <% var weapon = nhanvat[count].id_weapons %>
+            <% for(var i = 0; i < weapons.length; i++){ 
+                if (weapons[i].id_weapons == weapon){ 
+                    var weaponhp=weapons[i].hp_weapon
+                    var weaponatk=weapons[i].atk_weapon}}%> 
+            <% var hpnhanvat = itemhp + weaponhp;
+                var atknhanvat = itematk + weaponatk %>
+            <td><h2>HP: <%=hpnhanvat%></h2></td>
+            <td><h2>ATK: <%=atknhanvat%> </h2></td>
+        </tr>
+        <tr>
+            
+            
+            <% for(var i = 0; i < items.length; i++){ 
+                 if (items[i].id == item){ %>
+                    <td><h2>Trang bị</h2></td>
+                    <td><h2><%= items[i].name %></h2>
+                    <textarea cols="40" rows="2"><%= items[i].description %></textarea></td>
+                    <td><img src="data:image/png;base64,<%=items[i].itemimage%>" alt="Embedded Image"  width="70px"></td>
+                    <td><h2>HP+<%= items[i].hp_item %></h2></td>
+                    <td><h2>ATK+<%= items[i].atk_item %></h2></td>
+                <% } 
+             } %>
+           
+        </tr>
+
+        <tr>
+            
+            
+            <% for(var i = 0; i < weapons.length; i++){
+                 if (weapons[i].id_weapons == weapon){ %>
+                    <td><h2>Vũ khí</h2></td>
+                    <td><h2><%= weapons[i].name %></h2>
+                    <textarea cols="40" rows="5"> <%= weapons[i].description %></textarea></td>
+                    <td><img src="data:image/png;base64,<%=weapons[i].weaponimage%>" alt="Embedded Image"  width="200 rem"></td>
+                    <td><h2>HP+<%= weapons[i].hp_weapon %></h2></td>
+                    <td><h2>ATK+<%= weapons[i].atk_weapon %></h2></td>
+                <% }
+             } 
+        } %>
+            
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+            <div class="card-body p-4">
+                <h1>Mục Bình Luận</h1>
+                <div id="respond" style="justify-content: space-between;">
+
+                    <form class="form-group" method="post" id="sample_form" >
+                  
+                    <input type="text" name="reviewer" id="reviewer" value="Ẩn danh">
+                  
+                    <textarea name="reviewtext" id="reviewtext  " cols="50" rows="4" placeholder="Nội dung"></textarea>
+                        <input type="hidden" name="id" id="id" />
+                        <input type="hidden" name="action" id="action" value="Add" />
+                        <button style="font-size: 14px;margin-left:5px;background-color:#4267b2;border-color:#4267b2;color:aliceblue" type="submit" class="btn" id="action_button">Add</button>
+            
+                  
+                    </form>
+                  
+                  </div>
+              <div class="card mb-4">
+                <div class="card-body">
+                    <% for (var i = 0; i < review.length; i++){ %>     
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <table class="table"  cellpadding="2" cellspacing="2">
+                            <tbody>
+                                <% for (var i = 0; i < review.length; i++){ %>
+                                <tr>
+                                    <td><%= review[i].reviewer%></td>
+                                    <td><%= review[i].reviewtext%></td>
+                                    <td><Button><a href="/deletereview/<%= review[i].id_review%>" class="btn">Xoá</a></Button></td>
+                                </tr>
+                                <%}%>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                  </div>
+                  <%}%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+  
+
+
+<%- include('footer.ejs'); -%>
+ 

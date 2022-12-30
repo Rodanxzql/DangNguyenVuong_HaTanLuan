@@ -1,0 +1,41 @@
+<div class="modal" tabindex="-1" id="action_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" id="sample_form" enctype="multipart/form-data">
+                <div class="modal-header" id="dynamic_modal_title">
+                    <h5 class="modal-title">Thêm vũ khí</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Tên vũ khí</label>
+                        <input type="text" name="name" id="name" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mô tả</label>
+                        <input type="text" name="description" id="description" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tấn công</label>
+                        <input type="text" name="atk_weapon" id="atk_weapon" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Máu</label>
+                        <input type="text" name="hp_weapon" id="hp_weapon" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hình vũ khí</label><br>
+                        <input type="file" name="weaponimage" id="weaponimage" accept="image/*" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="action" id="action" value="Add" />
+                    <button type="submit" class="btn btn-primary" id="action_button">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
